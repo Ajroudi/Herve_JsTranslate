@@ -1,0 +1,29 @@
+<?php
+/**
+ * Herve_JsTranslate example template file
+ *
+ * @category	Herve
+ * @package		Herve_JsTranslate
+ * @copyright	Copyright (c) 2012 Hervé Guétin. (http://www.herveguetin.com)
+ * @license		http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author		Hervé G. - Twitter : @vrnet
+ */ 
+?>
+<script type="text/javascript">
+	alert(Translator.translate('Some JS Alert'));
+</script>
+
+<form action="" method="post" id="jstranslate_form">
+	<div class="input-box">
+		<input type="text" name="jstranslate-input" id="jstranslate_input" title="<?php echo $this->__('Some input'); ?>" class="input-text validate-jstranslate"/>
+	</div>
+	<div class="actions">
+		<button type="submit" title="<?php echo $this->__('Submit'); ?>" class="button"><span><span><?php echo $this->__('Submit'); ?></span></span></button>
+	</div>
+</form>
+<script type="text/javascript">
+	Validation.add('validate-jstranslate', 'Some Validation Rule', function(v) {
+	    return !Validation.get('IsEmpty').test(v);
+	});
+	var jstranslateForm = new VarienForm('jstranslate_form');
+</script>
